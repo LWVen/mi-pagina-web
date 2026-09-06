@@ -5,146 +5,356 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi primera página web</title>
+    <title>Mi Página Web</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-color: #f4f6f8;
+            color: #333;
         }
 
-        /* ENCABEZADO */
         header {
-            background-color: #1f4e79;
+            background-color: #1976d2;
             color: white;
             text-align: center;
             padding: 25px;
         }
 
-            header h1 {
-                margin: 0;
-            }
-
-        /* MENÚ */
         nav {
             background-color: #333;
-            text-align: center;
-            padding: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
             nav a {
                 color: white;
                 text-decoration: none;
-                margin: 0 20px;
-                font-size: 18px;
+                padding: 15px 20px;
             }
 
                 nav a:hover {
-                    color: #66ccff;
+                    background-color: #1976d2;
                 }
 
-        /* CONTENIDO */
-        main {
-            text-align: center;
-            padding: 40px;
+        .contenedor {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
         }
 
-            main h2 {
-                color: #1f4e79;
-            }
+        .tarjeta {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
 
-        /* IMAGEN */
         .imagen {
-            width: 500px;
-            max-width: 90%;
-            border-radius: 15px;
-            margin: 20px;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        /* BOTONES */
+        h2 {
+            color: #1976d2;
+        }
+
         button {
-            background-color: #1f4e79;
+            background-color: #1976d2;
             color: white;
             border: none;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 12px 20px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
         }
 
             button:hover {
-                background-color: #163a5c;
+                background-color: #125ca5;
             }
 
+        .formulario {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #1b5e20;
+            display: none;
+        }
+
+        .error {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #ffebee;
+            color: #c62828;
+            border-radius: 6px;
+            display: none;
+        }
+
         footer {
+            text-align: center;
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- TÍTULO -->
     <header>
-        <h1>Mi primera página web</h1>
-        <p>Creada con Visual Studio</p>
+        <h1>Mi Página Web</h1>
+        <p>Bienvenido a mi sitio</p>
     </header>
 
-    <!-- MENÚ -->
     <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#cuit">Calculador de CUIT</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 
-    <!-- CONTENIDO -->
-    <main>
+    <div class="contenedor">
 
-        <h2>¡Bienvenido!</h2>
+        <!-- INICIO -->
+        <section id="inicio" class="tarjeta">
+            <h2>Bienvenido</h2>
 
-        <p>
-            Esta es mi primera página web creada desde Visual Studio.
-        </p>
+            <p>
+                Esta es una página web de prueba publicada mediante GitHub Pages.
+            </p>
 
-        <!-- IMAGEN -->
-        <img class="imagen"
-             src="https://picsum.photos/800/400"
-             alt="Imagen de ejemplo">
+            <img class="imagen"
+                 src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+                 alt="Imagen de ejemplo">
 
-        <br>
+            <br><br>
 
-        <!-- BOTONES -->
-        <button onclick="saludar()">
-            Saludar
-        </button>
+            <button onclick="alert('¡Hola! El botón funciona correctamente.')">
+                Presionar botón
+            </button>
+        </section>
 
-        <button onclick="mostrarMensaje()">
-            Mostrar mensaje
-        </button>
 
-    </main>
+        <!-- CALCULADOR DE CUIT -->
+        <section id="cuit" class="tarjeta">
 
-    <!-- PIE DE PÁGINA -->
+            <h2>Calculador de CUIT</h2>
+
+            <p>
+                Ingresá los datos para calcular el número de CUIT.
+            </p>
+
+            <div class="formulario">
+
+                <label for="sexo">Sexo:</label>
+
+                <select id="sexo">
+                    <option value="">Seleccionar...</option>
+                    <option value="20">Masculino</option>
+                    <option value="27">Femenino</option>
+                </select>
+
+
+                <label for="dni">DNI:</label>
+
+                <input type="text"
+                       id="dni"
+                       maxlength="8"
+                       placeholder="Ejemplo: 30123456"
+                       inputmode="numeric">
+
+
+                <br><br>
+
+                <button onclick="calcularCUIT()">
+                    Calcular CUIT
+                </button>
+
+                <div id="error" class="error"></div>
+
+                <div id="resultado" class="resultado">
+                    <span id="cuit"></span>
+                    <br><br>
+
+                    <button onclick="copiarCUIT()">
+                        Copiar CUIT
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="tarjeta">
+
+            <h2>Contacto</h2>
+
+            <p>
+                Podés agregar aquí tus datos de contacto.
+            </p>
+
+        </section>
+
+    </div>
+
+
     <footer>
-        <p>Mi página web © 2026</p>
+        <p>© 2026 Mi Página Web</p>
     </footer>
+
 
     <script>
 
-        function saludar() {
-            alert("¡Hola! Bienvenido a mi página web.");
+        function calcularCUIT() {
+
+            const sexo = document.getElementById("sexo").value;
+            const dni = document.getElementById("dni").value.trim();
+
+            const resultado = document.getElementById("resultado");
+            const error = document.getElementById("error");
+            const cuit = document.getElementById("cuit");
+
+            // Ocultar mensajes anteriores
+            resultado.style.display = "none";
+            error.style.display = "none";
+
+            // Validar sexo
+            if (sexo === "") {
+
+                mostrarError("Seleccioná el sexo.");
+
+                return;
+            }
+
+            // Validar DNI
+            if (!/^\d{7,8}$/.test(dni)) {
+
+                mostrarError("Ingresá un DNI válido de 7 u 8 números.");
+
+                return;
+            }
+
+            // Convertir DNI a número de 8 dígitos
+            const dniCompleto = dni.padStart(8, "0");
+
+            // Crear los primeros 10 dígitos
+            const primerosDigitos = sexo + dniCompleto;
+
+            // Multiplicadores para cálculo del dígito verificador
+            const multiplicadores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+
+            let suma = 0;
+
+            for (let i = 0; i < 10; i++) {
+
+                suma += parseInt(primerosDigitos[i]) * multiplicadores[i];
+
+            }
+
+            let resto = suma % 11;
+
+            let digitoVerificador = 11 - resto;
+
+            // Casos especiales
+            if (digitoVerificador === 11) {
+
+                digitoVerificador = 0;
+
+            } else if (digitoVerificador === 10) {
+
+                mostrarError(
+                    "El CUIT requiere una condición especial. Probá con otro tipo de identificación."
+                );
+
+                return;
+            }
+
+            const numeroCUIT =
+                sexo +
+                "-" +
+                dniCompleto +
+                "-" +
+                digitoVerificador;
+
+            cuit.textContent = numeroCUIT;
+
+            resultado.style.display = "block";
         }
 
-        function mostrarMensaje() {
-            alert("Este botón funciona con JavaScript.");
+
+        function mostrarError(mensaje) {
+
+            const error = document.getElementById("error");
+
+            error.textContent = mensaje;
+
+            error.style.display = "block";
         }
+
+
+        function copiarCUIT() {
+
+            const cuit = document.getElementById("cuit").textContent;
+
+            navigator.clipboard.writeText(cuit)
+                .then(function () {
+
+                    alert("CUIT copiado: " + cuit);
+
+                })
+                .catch(function () {
+
+                    alert("No se pudo copiar automáticamente.");
+
+                });
+
+        }
+
+
+        // Permitir calcular presionando Enter
+        document.getElementById("dni").addEventListener("keypress", function (event) {
+
+            if (event.key === "Enter") {
+
+                calcularCUIT();
+
+            }
+
+        });
 
     </script>
 
