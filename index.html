@@ -1,0 +1,153 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi primera página web</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* ENCABEZADO */
+        header {
+            background-color: #1f4e79;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+            header h1 {
+                margin: 0;
+            }
+
+        /* MENÚ */
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 15px;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 20px;
+                font-size: 18px;
+            }
+
+                nav a:hover {
+                    color: #66ccff;
+                }
+
+        /* CONTENIDO */
+        main {
+            text-align: center;
+            padding: 40px;
+        }
+
+            main h2 {
+                color: #1f4e79;
+            }
+
+        /* IMAGEN */
+        .imagen {
+            width: 500px;
+            max-width: 90%;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        /* BOTONES */
+        button {
+            background-color: #1f4e79;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #163a5c;
+            }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TÍTULO -->
+    <header>
+        <h1>Mi primera página web</h1>
+        <p>Creada con Visual Studio</p>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main>
+
+        <h2>¡Bienvenido!</h2>
+
+        <p>
+            Esta es mi primera página web creada desde Visual Studio.
+        </p>
+
+        <!-- IMAGEN -->
+        <img class="imagen"
+             src="https://picsum.photos/800/400"
+             alt="Imagen de ejemplo">
+
+        <br>
+
+        <!-- BOTONES -->
+        <button onclick="saludar()">
+            Saludar
+        </button>
+
+        <button onclick="mostrarMensaje()">
+            Mostrar mensaje
+        </button>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>Mi página web © 2026</p>
+    </footer>
+
+    <script>
+
+        function saludar() {
+            alert("¡Hola! Bienvenido a mi página web.");
+        }
+
+        function mostrarMensaje() {
+            alert("Este botón funciona con JavaScript.");
+        }
+
+    </script>
+
+</body>
+</html>
+```
